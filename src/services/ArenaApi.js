@@ -4,5 +4,7 @@ export const fetchChannels = async () => {
   );
   const json = await res.json();
 
-  return json;
+  return json.map(({ title }) => ({
+    title: title
+  }));
 };
