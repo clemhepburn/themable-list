@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../header/Header';
-import CharacterList from '../characters/CharacterList';
+import ChannelList from '../characters/ChannelList';
 
 export default function App() {
   return (
     <>
       <Header />
-      <CharacterList />
+      <ChannelList />
     </>
   );
 }
