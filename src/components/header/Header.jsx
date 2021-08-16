@@ -1,11 +1,17 @@
 import React from 'react';
+import { useTheme } from '../../state/useTheme';
+import './Header.css';
 
 
 export default function Header() {
-  return (
-    <div className="header">\
-      <p>Living Museum of Are.na Channels</p>
+  const { theme, setTheme } = useTheme();
 
-    </div>
+  return (
+    <header className="header">
+      <p>Living Museum of Are.na Channels</p>
+      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+        {theme === 'light' ? '🌃' : '💡'} </button>
+
+    </header>
   );
 }

@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 2rem;
+  font-weight: bold;
+}
+
+header button {
+  font-size: 2rem;
+}
