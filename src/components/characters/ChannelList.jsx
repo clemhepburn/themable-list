@@ -6,8 +6,8 @@ import Channel from './Channel';
 const ChannelList = () => {
   const channels = useChannels();
 
-  const channelElements = channels.map((title) => (
-    <li key={title}>
+  const channelElements = channels.map((channel) => (
+    <li key={channel.title}>
       <Channel {...channel} />
     </li>
   ));

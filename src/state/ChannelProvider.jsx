@@ -13,6 +13,7 @@ export const ChannelProvider = ({ children }) => {
 
   useEffect(() => {
     apiMap[selectedApi]().then(setChannels);
+    console.log('~~~~~~~~~~~~~' + channels);
   }, [selectedApi]);
 
   return (
