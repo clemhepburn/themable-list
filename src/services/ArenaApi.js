@@ -1,6 +1,6 @@
 export const fetchChannels = async () => {
   const res = await fetch(
-    'http://api.are.na/v2/channels/?per=100'
+    'https://api.are.na/v2/channels/?per=100'
   );
   const json = await res.json();
 
