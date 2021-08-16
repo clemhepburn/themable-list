@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { fetchChannels } from '../services/ArenaApi.js';
+import { fetchChannels } from '../services/ArenaApi';
 
 const ChannelContext = createContext();
 
@@ -8,13 +8,12 @@ export const ChannelProvider = ({ children }) => {
   const [selectedApi, setSelectedApi] = useState('arena');
 
   const apiMap = {
-    arena: fetchChannels
+    arena: fetchChannels,
   };
 
   useEffect(() => {
     apiMap[selectedApi]().then(setChannels);
   }, [selectedApi]);
-
 
   return (
     <ChannelContext.Provider value={{ channels, setSelectedApi, apiMap }}>
@@ -28,12 +27,12 @@ export const useChannels = () => {
   return channels;
 };
 
-export const useSetApi = () => {
+export const useSetSelectedApi = () => {
   const { setSelectedApi } = useContext(ChannelContext);
   return setSelectedApi;
 };
 
-export const useAvailableApis = () => {
+export const useAvailableAPIs = () => {
   const { apiMap } = useContext(ChannelContext);
   return Object.keys(apiMap);
 };
